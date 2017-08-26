@@ -21,7 +21,9 @@
 ---
 ## **Adapt Spring Security (OAuth2)**
 
-#### 1. Dependency 추가 붙이는 작업
+---
+
+### 1. Spring Security Dependency 추가
 
 ```xml
 <dependency>
@@ -37,10 +39,26 @@
 </dependency>
 ```
 ---
-#### 2. Spring Security Filters
-//필터들이 쫙 붙는 장면
+
+### 2. Spring Security Filters
+
+<div style="border-style:solid; text-align: center; margin: 0px">SecurityContextPersistenceFilter</div><br>
+
+<div style="border-style:solid; text-align: center; margin: 0px">HeaderWriterFilter</div><br>
+CsrfFilter<br>
+LogoutFilter<br>
+RequestCacheAwareFilter<br>
+SecurityContextHolderAwareRequestFilter<br>
+SessionManagementFilter<br>
+ExceptionTranslationFilter<br>
+OAuth2ClientContextFilter<br>
+...
+**CompositeFilter**
+
+
+
 ---
-#### 3. 인증 및 권한 제어 3가지 방법
+### 3. 인증 및 권한 제어 3가지 방법
 <span style="float: left">1. @Secured</span> <br>
 
 ```java
@@ -68,7 +86,7 @@ protected void configure(HttpSecurity http) throws Exception {
 ```
 
 ---
-4. OAuth2를 이용하기 위한 방법으로 필터 확장 및 등록하는 법
+### 4. OAuth2를 이용하기 위한 방법으로 필터 확장 및 등록하는 법
 - 다양한 리소스를 간편하게 등록해서 확장 가능
     - naver
     - facebook
@@ -76,9 +94,9 @@ protected void configure(HttpSecurity http) throws Exception {
     - 등등..
 
 ---
-5. 필터 동작 과정
+### 5. 필터 동작 과정
 ---
-6. Authorization 결과물
+### 6. Authorization 결과물
 - 사진 2장
     - ROLE_USER 접근 불가.jpg + log
     - ROLE_ADMIN 접근 승인.jpg + log
