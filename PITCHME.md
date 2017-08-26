@@ -8,6 +8,9 @@
 
 ---
 ## **Why Spring Security?**
+
+---
+
 ### 우리 시스템의 이슈
 1. 시스템에 Authentication 만 존재
 2. Login 과정의 로직 분리가 확실하게 되어있지 않다
@@ -45,21 +48,17 @@
 
 ### 2. Spring Security Filters
 
-<div style="border-style:solid; text-align: center; margin: 0px">SecurityContextPersistenceFilter</div><br>
-
-<div style="border-style:solid; text-align: center; margin: 0px">HeaderWriterFilter</div><br>
-
-`CsrfFilter`<br>
-`LogoutFilter`<br>
+<그림으로 변경><br>
+SecurityContextPersistenceFilter<br>
+HeaderWriterFilter<br>
+CsrfFilter<br>
+LogoutFilter<br>
 RequestCacheAwareFilter<br>
 SecurityContextHolderAwareRequestFilter<br>
 SessionManagementFilter<br>
 ExceptionTranslationFilter<br>
 OAuth2ClientContextFilter<br>
-...
 **CompositeFilter**
-
-
 
 ---
 ### 3. 인증 및 권한 제어 3가지 방법
@@ -99,6 +98,10 @@ protected void configure(HttpSecurity http) throws Exception {
 
 ---
 ### 5. 필터 동작 과정
+
+<플로우 차트>
+Oauth
+
 ---
 ### 6. Authorization 결과물
 - 사진 2장
