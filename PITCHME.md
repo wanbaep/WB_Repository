@@ -41,14 +41,14 @@
 //필터들이 쫙 붙는 장면
 ---
 #### 3. 인증 및 권한 제어 3가지 방법
-- @Secured
+<span style="text-align=left">1. @Secured</span>
 
 ```java
 @Secured("ROLE_USER")
 @Secured("ROLE_ADMIN")
 ```
 
-- Configure in WebSecurityConfigurerAdapter
+<span style="text-align=left">2. Configure in WebSecurityConfigurerAdapter</span>
 
 ```java
 @Override
@@ -60,7 +60,7 @@ protected void configure(HttpSecurity http) throws Exception {
 }
 ```
 
-- xml file
+<span style="text-align=left">3. xml file</span>
 
 ```xml
 <intercept-url pattern="/index" access="hasRole('ADMIN')"/>
