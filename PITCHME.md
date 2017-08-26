@@ -1,4 +1,4 @@
-1. Authentication vs Authorization
+1. Authentication & Authorization
 <span style="font-family: Helvetica Neue; font-weight: bold; color:#ffffff">
 ---
 2. Why Spring Security
