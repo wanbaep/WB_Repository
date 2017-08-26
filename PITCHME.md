@@ -9,8 +9,9 @@
 ---
 ## **Why Spring Security?**
 ### 우리 시스템의 이슈
-<span style="align-left">1. 시스템에 Authentication 만 존재</span>
+<span style="align-left">1. 시스템에 Authentication 만 존재</span> <br>
 <span style="align-left">2. Login 과정의 로직 분리가 확실하게 되어있지 않다</span>
+3. 안녕
 
 ---
 ### Solution
