@@ -11,12 +11,14 @@
 ### 우리 시스템의 이슈
 1. 시스템에 Authentication 만 존재
 2. Login 과정의 로직 분리가 확실하게 되어있지 않다
-
+<br>
+<SpringSecurity 이전의 로그인 로직 그림>
 ---
-### Solution
-- Spring Security 활용
-    - Role 기반의 접근 권한 지원
-    - Spring MVC와의 분리
+### 해결방안
+#### Spring Security 활용
+1. Role 기반의 접근 권한 지원
+2. Spring MVC와의 분리
+<SpringSecurity 이후의 로그인 로직 그림>
 
 ---
 ## **Adapt Spring Security (OAuth2)**
@@ -38,6 +40,7 @@
     <version>SPRING_SECURITY_OAUTH2_VERSION</version>
 </dependency>
 ```
+
 ---
 
 ### 2. Spring Security Filters
