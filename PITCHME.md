@@ -19,24 +19,57 @@
     - Spring MVC와의 분리
 
 ---
- 부분을 추가하는데 있어서 Spring MVC 코드에 대한 수정 없이 기능을 추가 하고 싶다.
+## **Adapt Spring Security (OAuth2)**
+
+1. Pom 붙이는 작업
+```xml
+<dependency>
+    <groupId>org.springframework.security</groupId>
+    <artifactId>spring-security-taglibs</artifactId>
+    <version>SPRING_SECURITY_VERSION</version>
+</dependency>
+
+<dependency>
+    <groupId>org.springframework.security.oauth</groupId>
+    <artifactId>spring-security-oauth2</artifactId>
+    <version>SPRING_SECURITY_OAUTH2_VERSION</version>
+</dependency>
+```
 ---
+2. 필터들이 쫙 붙는 장면
 
-## **How to adapt Spring Security OAuth2**
+---
+3. 인증 및 권한 제어 3가지 방법
+- @Secured
+- Config http.~~
+- xml
 
-3. Adapt Authorization
-    - @RequestMapping("/admin/category")
-    - WhiteList 식 Page 관리
-- config.class에 url에 권한관련을 모아놓는 것이 아닌 어노테이션으로 컨트롤러에 권한을 표현하는 형태
+---
+4. OAuth2를 이용하기 위한 방법으로 필터 확장 및 등록하는 법
+- 다양한 리소스를 간편하게 등록해서 확장 가능
+    - naver
+    - facebook
+    - 카카오
+    - 등등..
 
+---
+5. 필터 동작 과정
+---
+6. Authorization 결과물
+- 사진 2장
+    - ROLE_USER 접근 불가.jpg + log
+    - ROLE_ADMIN 접근 승인.jpg + log
+---
+## 시행착오
+
+- Spring Security Boot에는 이렇게 되어 있었는데 Spring Security에서는 달랐다...
 
 ---
 결론
 
-- Spring MVC와 Spring Security의 완전한 분리
-- 
+- Spring MVC와 Spring Security의 완전한 로직 분리
 
 
 ---
-5. Q&A
-
+## Q&A
+#### 감사합니다.
