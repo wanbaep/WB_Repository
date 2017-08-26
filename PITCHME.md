@@ -9,9 +9,8 @@
 ---
 ## **Why Spring Security?**
 ### 우리 시스템의 이슈
-<span style="align-left">1. 시스템에 Authentication 만 존재</span> <br>
-<span style="align-left">2. Login 과정의 로직 분리가 확실하게 되어있지 않다</span>
-3. 안녕
+1. 시스템에 Authentication 만 존재
+2. Login 과정의 로직 분리가 확실하게 되어있지 않다
 
 ---
 ### Solution
@@ -22,7 +21,8 @@
 ---
 ## **Adapt Spring Security (OAuth2)**
 
-1. Pom 붙이는 작업
+#### 1. Dependency 추가 붙이는 작업
+
 ```xml
 <dependency>
     <groupId>org.springframework.security</groupId>
@@ -37,13 +37,35 @@
 </dependency>
 ```
 ---
-2. 필터들이 쫙 붙는 장면
-
+#### 2. Spring Security Filters
+//필터들이 쫙 붙는 장면
 ---
-3. 인증 및 권한 제어 3가지 방법
+#### 3. 인증 및 권한 제어 3가지 방법
 - @Secured
-- Config http.~~
-- xml
+
+```java
+@Secured("ROLE_USER")
+@Secured("ROLE_ADMIN")
+```
+
+- Configure in WebSecurityConfigurerAdapter
+
+```java
+@Override
+protected void configure(HttpSecurity http) throws Exception {
+    http
+        .authorizeRequests()
+        .antMatchers("/index").access("ROLE_ADMIN");
+        .antMatchers("/**").access("ROLE_USER");
+}
+```
+
+- xml file
+
+```xml
+<intercept-url pattern="/index" access="hasRole('ADMIN')"/>
+<intercept-url pattern="/**" access="hasRole('USER')" />
+```
 
 ---
 4. OAuth2를 이용하기 위한 방법으로 필터 확장 및 등록하는 법
