@@ -11,8 +11,8 @@
 
 ---
 
-### 우리 시스템의 이슈
-1. 시스템에 Authentication 만 존재
+### 우리 시스템의 **<span style="color:#00ff99">"이슈"</span>**
+1. 시스템에 **Authentication** 만 존재
 2. Login 과정의 로직 분리가 확실하게 되어있지 않다
 <br>
 <SpringSecurity 이전의 로그인 로직 그림>
@@ -57,7 +57,7 @@ RequestCacheAwareFilter<br>
 SecurityContextHolderAwareRequestFilter<br>
 SessionManagementFilter<br>
 ExceptionTranslationFilter<br>
-OAuth2ClientContextFilter<br>
+**OAuth2ClientContextFilter**<br>
 **CompositeFilter**
 
 ---
@@ -90,6 +90,9 @@ protected void configure(HttpSecurity http) throws Exception {
 
 ---
 ### 4. OAuth2를 이용하기 위한 방법으로 필터 확장 및 등록하는 법
+1. 다양한 리소스들 생성
+2. 커스텀 필터 생성
+3. CompositeFilter를 생성 후에 필터를 끼워 넣는다.
 - 다양한 리소스를 간편하게 등록해서 확장 가능
     - naver
     - facebook
