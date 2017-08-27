@@ -23,7 +23,8 @@
 #### Spring Security 활용
 1. Role 기반의 접근 권한 지원
 2. Spring MVC와의 분리
-<SpringSecurity 이후의 로그인 로직 그림>
+
+<img src="pitch_images/after_security.png" alt="image" style="width: 70%;">
 
 ---
 ## **Adapt Spring Security (OAuth2)**
@@ -48,18 +49,7 @@
 
 ---
 
-### 2. Spring Security Filters
-
-+++?image=pitch_images/security_filter_chain.png
-
-+++?image=pitch_images/security_filter_custom.png
-
-
-
----
-
-
-### 2. Spring Security Filters
+### 2. Spring Security Filters ↓
 
 +++
 <img src="pitch_images/security_filter_chain.png" alt="image" style="width: 70%;">
