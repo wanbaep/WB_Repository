@@ -50,17 +50,10 @@
 
 ### 2. Spring Security Filters
 
-<그림으로 변경><br>
-SecurityContextPersistenceFilter<br>
-HeaderWriterFilter<br>
-CsrfFilter<br>
-LogoutFilter<br>
-RequestCacheAwareFilter<br>
-SecurityContextHolderAwareRequestFilter<br>
-SessionManagementFilter<br>
-ExceptionTranslationFilter<br>
-**OAuth2ClientContextFilter**<br>
-**CompositeFilter**
++++
+![0](pitch_images/security_filter_chain.png)
++++
+![1](pitch_images/security_filter_custom.png)
 
 ---
 ### 3. 인증 및 권한 제어 3가지 방법
