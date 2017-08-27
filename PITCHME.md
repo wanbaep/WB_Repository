@@ -15,8 +15,7 @@
 1. 시스템에 **Authentication** 만 존재
 2. Login 과정의 로직 분리가 확실하게 되어있지 않다
 
-![image](pitch_images/before_security.png)
-
+<img src="pitch_images/before_security.png" alt="image" style="width: 70%;">
 
 
 ---
