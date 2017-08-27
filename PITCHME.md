@@ -15,7 +15,8 @@
 1. 시스템에 **Authentication** 만 존재
 2. Login 과정의 로직 분리가 확실하게 되어있지 않다
 <br>
-<SpringSecurity 이전의 로그인 로직 그림>
+![None Spring Security System Architecture](pitch_images/before_security.png)
+
 ---
 ### 해결방안
 #### Spring Security 활용
