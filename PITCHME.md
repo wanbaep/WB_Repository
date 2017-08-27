@@ -19,10 +19,9 @@
 
 
 ---
-### 해결방안
-#### Spring Security 활용
-1. Role 기반의 접근 권한 지원
-2. Spring MVC와의 분리
+### **<span style="color:#00ff99">"해결방안"</span>** - Spring Security 활용
+1. Spring MVC와의 분리
+2. Role 기반의 접근 권한 지원
 
 <img src="pitch_images/after_security.png" alt="image" style="width: 70%;">
 
