@@ -17,7 +17,7 @@
 
 ![image](pitch_images/before_security.png)
 
----?image=pitch_images/before_security.png&size=auto 40%
+---?image=pitch_images/before_security.png&size=auto 90%
 
 
 ---
