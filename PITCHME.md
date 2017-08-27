@@ -51,8 +51,10 @@
 ### 2. Spring Security Filters
 
 +++
+<!-- .slide: data-background-transition="none" -->
 ![0](image=assets/pitch_images/security_filter_chain.png)
 +++
+<!-- .slide: data-background-transition="none" -->
 ![1](image=assets/pitch_images/security_filter_custom.png)
 
 ---
