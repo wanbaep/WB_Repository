@@ -88,35 +88,39 @@ protected void configure(HttpSecurity http) throws Exception {
 
 ---
 ### 4. OAuth2 사용을 위한 필터 확장 및 등록 방법
-<span style="float: left">1. 다양한 리소스들 생성</span>
+<span style="float: left">1. 다양한 리소스들 생성</span><br>
 
 ```java
 public AuthorizationCodeResourceDetails naver() {
-    AuthorizationCodeResourceDetails naverDetails = new AuthorizationCodeResourceDetails();
+    AuthorizationCodeResourceDetails naverDetails
+          = new AuthorizationCodeResourceDetails();
     ...
     return details;
 }
 
 private AuthorizationCodeResourceDetails facebook() {
-    AuthorizationCodeResourceDetails facebookDetails = new AuthorizationCodeResourceDetails();
+    AuthorizationCodeResourceDetails facebookDetails
+          = new AuthorizationCodeResourceDetails();
     ...
     return details;
 }
 ```
 
 +++
-<span style="float: left">2. 커스텀 필터 생성</span>
-다양한 리소스를 간편하게 등록해서 확장 가능
+<span style="float: left">2. 커스텀 필터 생성</span><br>
+    - 다양한 리소스를 간편하게 등록해서 확장 가능
 
 ```java
 @Bean("sso.filter")
 public Filter ssoFilter() {
     List<Filter> filters = new ArrayList<>();
+    OAuth2ClientAuthenticationProcessingFilter naver
+            = new OAuth2ClientAuthenticationProcessingFilter("/naver_login");
 
-    OAuth2ClientAuthenticationProcessingFilter naver = new OAuth2ClientAuthenticationProcessingFilter("/naver_login");
     facebook.setRestTemplate(naver(), oauth2ClientContext));
     facebook.setTokenServices(new UserTokenService(...));
-    facebook.setAuthenticationSuccessHandler(new OAuth2SuccessHandler("naver", userService));
+    facebook.setAuthenticationSuccessHandler(
+            new OAuth2SuccessHandler("naver", userService));
     filters.add(naver);
 
     //다른 서비스도 위와 동일하게 필터 설정
@@ -128,14 +132,16 @@ public Filter ssoFilter() {
 ```
 
 +++
-<span style="float: left">3. CompositeFilter를 생성 후에 필터를 끼워 넣는다.</span>
+<span style="float: left">3. CompositeFilter를 생성 후에 필터를 끼워 넣는다.</span><br>
 
 ```java
 protected void configure(HttpSecurity http) throws Exception {
     //...
     http
-        .addFilterAfter(oauth2ClientContextFilter, ExceptionTranslationFilter.class)
-        .addFilterBefore((Filter) context.getBean("sso.filter"),FilterSecurityInterceptor.class);
+        .addFilterAfter(oauth2ClientContextFilter,
+                ExceptionTranslationFilter.class)
+        .addFilterBefore((Filter) context.getBean("sso.filter"),
+                FilterSecurityInterceptor.class);
     //...
 }
 ```
