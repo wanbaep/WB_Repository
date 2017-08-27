@@ -132,7 +132,7 @@ public Filter ssoFilter() {
 ```
 
 +++
-<span style="float: left">3) CompositeFilter를 생성 후에 필터를 끼워 넣는다.</span><br>
+<span style="float: left">3) CompositeFilter를 생성 후 필터 등록</span><br>
 
 ```java
 protected void configure(HttpSecurity http) throws Exception {
@@ -148,9 +148,7 @@ protected void configure(HttpSecurity http) throws Exception {
 
 ---
 ### 5. 필터 동작 과정
-
-<플로우 차트>
-Oauth
+<img src="pitch_images/security_flowchart_v1.png" alt="image" style="width: 70%;">
 
 ---
 ### 6. Authorization 결과물
