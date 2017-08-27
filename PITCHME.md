@@ -88,7 +88,7 @@ protected void configure(HttpSecurity http) throws Exception {
 
 ---
 ### 4. OAuth2 사용을 위한 필터 확장 및 등록 방법
-1. 다양한 리소스들 생성
+<span style="float: left">1. 다양한 리소스들 생성</span>
 
 ```java
 public AuthorizationCodeResourceDetails naver() {
@@ -105,8 +105,9 @@ private AuthorizationCodeResourceDetails facebook() {
 ```
 
 +++
-2. 커스텀 필터 생성
-- 다양한 리소스를 간편하게 등록해서 확장 가능
+<span style="float: left">2. 커스텀 필터 생성</span>
+다양한 리소스를 간편하게 등록해서 확장 가능
+
 ```java
 @Bean("sso.filter")
 public Filter ssoFilter() {
@@ -125,8 +126,9 @@ public Filter ssoFilter() {
     return filter;
 }
 ```
+
 +++
-3. CompositeFilter를 생성 후에 필터를 끼워 넣는다.
+<span style="float: left">3. CompositeFilter를 생성 후에 필터를 끼워 넣는다.</span>
 
 ```java
 protected void configure(HttpSecurity http) throws Exception {
