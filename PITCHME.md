@@ -60,14 +60,14 @@
 
 ---
 ### 3. 인증 및 권한 제어 3가지 방법
-<span style="float: left">1. @Secured</span> <br>
+<span style="float: left">1) @Secured</span> <br>
 
 ```java
 @Secured("ROLE_USER")
 @Secured("ROLE_ADMIN")
 ```
 
-<span style="float: left">2. Configure in WebSecurityConfigurerAdapter</span> <br>
+<span style="float: left">2) Configure in WebSecurityConfigurerAdapter</span> <br>
 
 ```java
 @Override
@@ -79,7 +79,7 @@ protected void configure(HttpSecurity http) throws Exception {
 }
 ```
 
-<span style="float: left">3. xml file</span> <br>
+<span style="float: left">3) xml file</span> <br>
 
 ```xml
 <intercept-url pattern="/index" access="hasRole('ADMIN')"/>
@@ -88,7 +88,7 @@ protected void configure(HttpSecurity http) throws Exception {
 
 ---
 ### 4. OAuth2 사용을 위한 필터 확장 및 등록 방법
-<span style="float: left">1. 다양한 리소스들 생성</span><br>
+<span style="float: left">1) 다양한 리소스들 생성</span><br>
 
 ```java
 public AuthorizationCodeResourceDetails naver() {
@@ -107,16 +107,16 @@ private AuthorizationCodeResourceDetails facebook() {
 ```
 
 +++
-<span style="float: left">2. 커스텀 필터 생성</span><br>
-    - 다양한 리소스를 간편하게 등록해서 확장 가능
+<span style="float: left">2) 커스텀 필터 생성</span><br>
+다양한 리소스를 간편하게 등록해서 확장 가능
 
 ```java
 @Bean("sso.filter")
 public Filter ssoFilter() {
     List<Filter> filters = new ArrayList<>();
+
     OAuth2ClientAuthenticationProcessingFilter naver
             = new OAuth2ClientAuthenticationProcessingFilter("/naver_login");
-
     facebook.setRestTemplate(naver(), oauth2ClientContext));
     facebook.setTokenServices(new UserTokenService(...));
     facebook.setAuthenticationSuccessHandler(
@@ -132,7 +132,7 @@ public Filter ssoFilter() {
 ```
 
 +++
-<span style="float: left">3. CompositeFilter를 생성 후에 필터를 끼워 넣는다.</span><br>
+<span style="float: left">3) CompositeFilter를 생성 후에 필터를 끼워 넣는다.</span><br>
 
 ```java
 protected void configure(HttpSecurity http) throws Exception {
