@@ -148,7 +148,7 @@ protected void configure(HttpSecurity http) throws Exception {
 
 ---
 ### 5. 필터 동작 과정
-<img src="pitch_images/security_flowchart_v1.png" alt="image" style="width: 50%;">
+<img src="pitch_images/security_flowchart_v1.png" alt="image" style="width: 60%;">
 
 ---
 ### 6. Authorization 결과물
