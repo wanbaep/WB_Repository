@@ -51,9 +51,9 @@
 ### 2. Spring Security Filters
 
 +++
-![0](pitch_images/security_filter_chain.png)
+![0](image=assets/pitch_images/security_filter_chain.png)
 +++
-![1](pitch_images/security_filter_custom.png)
+![1](image=assets/pitch_images/security_filter_custom.png)
 
 ---
 ### 3. 인증 및 권한 제어 3가지 방법
