@@ -14,7 +14,10 @@
 ### 우리 시스템의 **<span style="color:#00ff99">"이슈"</span>**
 1. 시스템에 **Authentication** 만 존재
 2. Login 과정의 로직 분리가 확실하게 되어있지 않다
+![image](pitch_images/before_security.png)
+
 ---?image=pitch_images/before_security.png&size=auto 40%
+
 
 ---
 ### 해결방안
